@@ -5,10 +5,14 @@ const port = 3000;
 
 // Set Handlebars as the view engine
 const hbs = exphbs.create({
-  // Specify any Handlebars configurations here (optional)
+  // You can optionally define configurations here if needed
+  layoutsDir: 'views/layouts/',  // Specify where your layouts are stored
+  partialsDir: 'views/partials/', // Specify where your partials are stored
+  defaultLayout: 'main', // Specify the default layout
 });
 
-app.engine('handlebars', hbs.engine); // Use `hbs.engine` instead of just `exphbs()`
+// Use the `hbs.engine` for setting Handlebars as the view engine
+app.engine('handlebars', hbs.engine); 
 app.set('view engine', 'handlebars');
 
 // Serve static files (like script.js, images, styles)
