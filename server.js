@@ -22,7 +22,7 @@ app.use(express.static('public'));
 app.get('/', (req, res) => {
     res.render('home', {
         title: 'Home - Allan John',
-        profilePic: '/profile.jpg',  // Example profile pic path
+        profilePic: '/images/profile.jpg',  //Profile pic path
         name: 'Allan John',
         tagline: 'Software Developer | Illustrator | Reader'
     });
