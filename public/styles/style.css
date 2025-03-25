@@ -191,3 +191,85 @@ html {
     transform: scale(1.05);
     background: linear-gradient(to right, #005bb5, #003d80);
 }
+
+/* Mobile Navigation Sidebar */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Starts hidden */
+    width: 250px;
+    height: 100%;
+    background: #111;
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    transition: left 0.3s ease;
+    z-index: 1100;
+}
+
+.mobile-nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    padding: 15px 20px;
+    border-bottom: 1px solid #222;
+    display: block;
+    transition: background 0.3s ease;
+}
+
+.mobile-nav a:hover {
+    background: #333;
+}
+
+/* Open Mobile Navbar */
+.mobile-nav.show {
+    left: 0; /* This moves the sidebar into view */
+}
+
+/* Hamburger Menu Button */
+.menu-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1200;
+    display: none; /* Hidden by default, shown in mobile */
+}
+
+/* Media Query for Mobile Layout */
+@media screen and (max-width: 768px) {
+    /* Hide desktop navigation links on mobile */
+    .navbar {
+        display: none;
+    }
+
+    /* Show the mobile navigation */
+    .mobile-nav {
+        display: flex;
+    }
+
+    /* Show the hamburger button */
+    .menu-btn {
+        display: block;
+    }
+
+    /* Style for mobile links */
+    .mobile-nav a {
+        color: white;
+        font-size: 1.2rem;
+        padding: 15px;
+        background: #1a1a1b;
+        border-top: 1px solid #333;
+        text-decoration: none;
+        transition: background 0.3s ease;
+    }
+
+    .mobile-nav a:hover {
+        background: #444444;
+    }
+}
